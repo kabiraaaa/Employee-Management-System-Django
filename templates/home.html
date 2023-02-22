@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for employee in employees %}
+<div class="col-md-4">
+    <a class="card mb-3 text-decoration-none text-black slow-hover" href="{% url 'employee_details' employee.id%}">
+        <div class="card-header"><p class="fs-16"><strong>{{employee.first_name|capfirst}} {{employee.last_name|capfirst}}</strong></p></div>
+        <div class="card-body"><p>{{ employee.email_id}}</p></div>
+    </a>
+</div>
+{% endfor %}
+
+{% endblock %}
